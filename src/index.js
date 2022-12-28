@@ -1,12 +1,13 @@
 'use strict';
 
 if (typeof window === 'undefined') {
-  const nodeCrypto = require("crypto");
-  global.crypto = {
-    getRandomValues(b) {
-      nodeCrypto.randomFillSync(b);
-    }
-  };
+  // Comment out the code temporarily to work on sveltekit
+  // const nodeCrypto = require("crypto");
+  // global.crypto = {
+  //   getRandomValues(b) {
+  //     nodeCrypto.randomFillSync(b);
+  //   }
+  // };
   global.performance = {
     now() {
       const [sec, nsec] = process.hrtime();
