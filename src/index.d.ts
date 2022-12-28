@@ -177,7 +177,7 @@ declare module 'excelize-wasm' {
    * @param r The contents buffer of the file
    * @param opts The options for open and reading spreadsheet
    */
-  export function OpenReader(r: Uint8Array[], opts?: Options): NewFile;
+  export function OpenReader(r: Uint8Array, opts?: Options): NewFile;
 
   /**
    * @constructor
@@ -227,7 +227,7 @@ declare module 'excelize-wasm' {
      * @param extension The extension name
      * @param file The contents buffer of the file
      */
-    AddPictureFromBytes(sheet: string, cell: string, opts: string, name: string, extension: string, file: Uint8Array[]): { error: string | null }
+    AddPictureFromBytes(sheet: string, cell: string, opts: string, name: string, extension: string, file: Uint8Array): { error: string | null }
 
     /**
      * AddPivotTable provides the method to add pivot table by given pivot
@@ -946,7 +946,7 @@ declare module 'excelize-wasm' {
      * size is large.
      * @param opts The options for save the spreadsheet
      */
-    WriteToBuffer(opts?: Options): { buffer: BlobPart, error: string | null };
+    WriteToBuffer(opts?: Options): { buffer: Uint8Array, error: string | null };
 
     /**
      * Error message
